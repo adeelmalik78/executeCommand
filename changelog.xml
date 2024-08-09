@@ -24,6 +24,21 @@
     </executeCommand>  
 </changeSet>
 
+<!-- <changeSet author="amalik"  id="awrrpt" runAlways="true" runOnChange="true" label="snapid">  
+    <executeCommand  executable="path/to/sqlplus"  
+            timeout="10s">  
+        <arg value="param1"/>
+        <arg value="param2"/> 
+    </executeCommand>  
+</changeSet>
+
+<changeSet author="amalik"  id="awrrpt" runAlways="true" runOnChange="true" label="report">  
+    <executeCommand  executable="path/to/sqlplus"  
+            timeout="10s">  
+        <arg value="param1"/>
+        <arg value="param2"/> 
+    </executeCommand>  
+</changeSet> -->
 
 <!-- <changeSet author="amalik"  id="ls" runAlways="true" runOnChange="true">  
     <executeCommand  executable="ls"  
