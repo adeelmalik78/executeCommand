@@ -16,10 +16,10 @@
 </changeSet>
 
 
-<changeSet author="amalik"  id="psql-COPY" runAlways="true" runOnChange="true">  
+<changeSet author="amalik"  id="executeCommand" runAlways="true" runOnChange="true">  
     <executeCommand  executable="../executeCommand/loadData.sh"  
             timeout="10s">  
-        <arg value="param1"/>
+        <arg value="runme.sh"/>
         <arg value="param2"/> 
     </executeCommand>  
 </changeSet>
