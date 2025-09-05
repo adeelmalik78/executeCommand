@@ -20,4 +20,4 @@ export EXP_CMD="exp userid=${USERID}@${DBHOST} owner=${OWNER} file=${DUMPFILE} l
 
 echo EXP_CMD=${EXP_CMD}
 
-# ${EXP_CMD}
+${EXP_CMD}

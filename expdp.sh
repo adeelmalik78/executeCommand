@@ -20,4 +20,4 @@ echo DIRECTORY=${DIRECTORY}
 export EXPDP_CMD="expdp userid=${USERID}@${DBHOST} dumpfile=${DUMPFILE} logfile=${LOGFILE} directory=${DIRECTORY}"
 echo EXPDP_CMD=${EXPDP_CMD}
 
-# ${EXPDP_CMD}
+${EXPDP_CMD}
