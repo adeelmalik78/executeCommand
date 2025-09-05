@@ -7,38 +7,45 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd
     http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.4.xsd ">
 
-<changeSet id="table1" author="amalik" labels="4.1.1">
+<!-- <changeSet id="table1" author="amalik" labels="4.1.1">
     <createTable tableName="table1">
         <column name="id" type="int"/>
         <column name="name" type="varchar(50)"/>
         <column name="city" type="varchar(30)"/>
     </createTable>
-</changeSet>
+</changeSet> -->
 
 
-<changeSet author="amalik"  id="executeCommand" runAlways="true" runOnChange="true">  
+<!-- <changeSet author="amalik"  id="executeCommand-loadData" runAlways="true" runOnChange="true">  
     <executeCommand  executable="../executeCommand/loadData.sh"  
             timeout="10s">  
         <arg value="runme.sh"/>
         <arg value="param2"/> 
     </executeCommand>  
-</changeSet>
-
-<!-- <changeSet author="amalik"  id="awrrpt" runAlways="true" runOnChange="true" label="snapid">  
-    <executeCommand  executable="path/to/sqlplus"  
-            timeout="10s">  
-        <arg value="param1"/>
-        <arg value="param2"/> 
-    </executeCommand>  
-</changeSet>
-
-<changeSet author="amalik"  id="awrrpt" runAlways="true" runOnChange="true" label="report">  
-    <executeCommand  executable="path/to/sqlplus"  
-            timeout="10s">  
-        <arg value="param1"/>
-        <arg value="param2"/> 
-    </executeCommand>  
 </changeSet> -->
+
+
+<changeSet author="amalik"  id="executeCommand-expdp" runAlways="true" runOnChange="true">  
+    <executeCommand  executable="../executeCommand/expdp.sh"  
+            timeout="10s">  
+        <arg value="USERID"/>
+        <arg value="DBHOST"/> 
+        <arg value="DUMPFILE.dmp"/> 
+        <arg value="LOGFILE.log"/> 
+        <arg value="DIRECTORY"/> 
+    </executeCommand>  
+</changeSet>
+
+<changeSet author="amalik"  id="executeCommand-exp" runAlways="true" runOnChange="true">  
+    <executeCommand  executable="../executeCommand/exp.sh"  
+            timeout="10s">  
+        <arg value="USERID"/>
+        <arg value="DBHOST"/> 
+        <arg value="OWNER"/> 
+        <arg value="DUMPFILE.dmp"/> 
+        <arg value="LOGFILE.log"/> 
+    </executeCommand>  
+</changeSet>
 
 <!-- <changeSet author="amalik"  id="ls" runAlways="true" runOnChange="true">  
     <executeCommand  executable="ls"  
